@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cryptonite</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/jquery-ui.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="header" class="masthead img-fluid" style="padding-top: 100px;">
+    <div class="container">
+      <h1 class="text-center display-3">Cryptonite</h1>
+      <div class="text-center"></div>
+    </div>
+  </header>
+
+  <!-- Nav Tab -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img id="navBrand" class="animated flipInX" src="images/coin.png" width="50" height="50"
+        class="d-inline-block align-top" alt="" />
+      Crypto
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mx-auto">
+        <li id="coins" class="li-nav nav-item">
+          Coins
+        </li>
+        <li id="reports" class="li-nav nav-item">
+          Live Reports
+        </li>
+        <li id="about" class="li-nav nav-item">
+          About Me
+        </li>
+
+        <li class="form-inline mx-auto">
+          <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search Coin Symbol"
+            aria-label="Search" />
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div id="main" class="container">
+    <h1 class="text-center display-1">Coins</h1>
+    <div id="mainCoins">
+      <div class="mx-auto d-block lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <h1 class="text-center display-1" id="search-alert">NO COINS FOUND</h1>
+  </div>
+
+  <!-- Live Report -->
+  <div id="liveReports" class="container">
+    <h1 class="text-center display-1">Live Reports</h1>
+    <h1 id="ajaxError" class="text-center">Coin Error</h1>
+    <div class="animated fadeIn" id="chartContainer" style="height: 60vh; width: 100%;"></div>
+  </div>
+
+  <!-- About -->
+  <div id="aboutMe" class="container">
+    <h1 class="text-center display-1">About Me</h1>
+    <br />
+    <div class="animated fadeIn ">
+      <img class="mx-auto d-block rounded-circle" src="./images/me.jpg" alt="me" />
+      <br />
+
+      <div class="row text-center">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2 col-sm-12">
+          <h3>Name</h3>
+          <p>Itzhak Tzoref</p>
+        </div>
+
+        <div class="col-lg-2 col-sm-12">
+          <h3>Age</h3>
+          <p>25 Years</p>
+        </div>
+
+        <div class="col-lg-2 col-sm-12">
+          <h3>Residence</h3>
+          <p>Tel Aviv, Israel</p>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>
+        <hr />
+      </div>
+
+      <div class="row">
+        <hr />
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8">
+          <p class="meText justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum."
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo.
+          </p>
+        </div>
+
+        <div class="col-lg-2"></div>
+      </div>
+      <div class="social d-flex justify-content-center">
+        <a href="https://www.facebook.com/Itzhak7" class="facebook " target="_blank"><i
+            class="fab fa-facebook fa-5x"></i></a>
+        <a href="https://twitter.com/itzhak7" class="twitter" target="_blank"><i class="fab fa-twitter fa-5x"></i></a>
+        <a href="https://www.instagram.com/itzhak07/" class="instagram" target="_blank"><i
+            class="fab fa-instagram fa-5x"></i></a>
+        <a href="https://www.linkedin.com/in/itzhak-tzoref-b928888b/" class="linkedin" target="_blank"><i
+            class="fab fa-linkedin fa-5x"></i></a>
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Selected Coins:</h5>
+        </div>
+        <div class="modal-body">
+          <h5>Select a Coin To Remove:</h5>
+          <div id="toggles"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/canvasjs.min.js"></script>
+  <script src="js/jquery.canvasjs.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
